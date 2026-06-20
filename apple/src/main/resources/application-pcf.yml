@@ -1,0 +1,18 @@
+spring:
+  profiles: pcf
+  kafka:
+    bootstrap-servers: pcf-kafka:9092  # replace with PCF Kafka broker/service
+
+app:
+  kafka:
+    topics:
+      upstream: "pcf-upstream-topic"
+
+app:
+  downstream:
+    beatroot-topic: "beatroot-topic"
+    carrot-topic: "carrot-topic"
+
+logging:
+  level:
+    com.example.apple: INFO

@@ -1,0 +1,16 @@
+spring:
+  profiles: pcf
+  kafka:
+    bootstrap-servers: pcf-kafka:9092
+
+app:
+  kafka:
+    topics:
+      upstream: "pcf-upstream-topic"
+
+server:
+  port: 8081
+
+logging:
+  level:
+    com.example.beatroot: INFO

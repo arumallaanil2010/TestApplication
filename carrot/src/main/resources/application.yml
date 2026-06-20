@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: carrot
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    root: INFO
+    com.example.carrot: DEBUG

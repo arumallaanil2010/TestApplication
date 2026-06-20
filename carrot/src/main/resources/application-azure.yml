@@ -1,0 +1,26 @@
+spring:
+  profiles: azure
+  kafka:
+    bootstrap-servers: azure-kafka:9093
+
+app:
+  kafka:
+    topics:
+      upstream: "azure-upstream-topic"
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://<your-azure-sql>.database.windows.net:1433;database=<db>
+    username: <username>
+    password: <password>
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8082
+
+logging:
+  level:
+    com.example.carrot: INFO

@@ -1,0 +1,27 @@
+spring:
+  profiles: azure
+  kafka:
+    bootstrap-servers: azure-kafka:9093
+
+app:
+  kafka:
+    topics:
+      upstream: "azure-upstream-topic"
+
+# Database (Azure SQL) - placeholders, replace with real values / use managed identity
+spring:
+  datasource:
+    url: jdbc:sqlserver://<your-azure-sql>.database.windows.net:1433;database=<db>
+    username: <username>
+    password: <password>
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8081
+
+logging:
+  level:
+    com.example.beatroot: INFO

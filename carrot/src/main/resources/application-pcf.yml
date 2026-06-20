@@ -1,0 +1,16 @@
+spring:
+  profiles: pcf
+  kafka:
+    bootstrap-servers: pcf-kafka:9092
+
+app:
+  kafka:
+    topics:
+      upstream: "pcf-upstream-topic"
+
+server:
+  port: 8082
+
+logging:
+  level:
+    com.example.carrot: INFO

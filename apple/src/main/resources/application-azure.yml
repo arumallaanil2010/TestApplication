@@ -1,0 +1,19 @@
+spring:
+  profiles: azure
+  kafka:
+    bootstrap-servers: azure-kafka:9093  # replace with real Azure Event Hubs / Kafka endpoint
+
+app:
+  kafka:
+    topics:
+      upstream: "azure-upstream-topic"
+
+# If Apple forwards messages to downstream module topics, use these names (they remain common)
+app:
+  downstream:
+    beatroot-topic: "beatroot-topic"
+    carrot-topic: "carrot-topic"
+
+logging:
+  level:
+    com.example.apple: INFO

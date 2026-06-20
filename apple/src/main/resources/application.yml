@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: apple
+  kafka:
+    bootstrap-servers: localhost:9092
+
+# Default (used when no profile is active). The actual upstream topic is set per-profile
+app:
+  kafka:
+    topics:
+      upstream: "upstream-topic"
+
+logging:
+  level:
+    root: INFO
+    com.example.apple: DEBUG
