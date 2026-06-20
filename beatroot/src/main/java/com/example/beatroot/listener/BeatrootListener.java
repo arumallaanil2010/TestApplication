@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class BeatrootListener {
     @Value("${spring.profiles.active:}")
     private String activeProfile;
 
-    @KafkaListener(topics = "beatroot-topic", groupId = "beatroot-group")
+    @KafkaListener(topics = "${app.downstream.beatroot-topic:beatroot-topic}", groupId = "beatroot-group")
     public void onMessage(String message, @Header(name = "env", required = false) String envHeader) {
         log.debug("Received beatroot message with env header={} : {}", envHeader, message);
         // If header is present and doesn't match this deployment's active profile, ignore

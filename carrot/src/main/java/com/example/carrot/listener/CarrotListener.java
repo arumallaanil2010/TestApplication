@@ -24,7 +24,7 @@ public class CarrotListener {
     @Value("${spring.profiles.active:}")
     private String activeProfile;
 
-    @KafkaListener(topics = "carrot-topic", groupId = "carrot-group")
+    @KafkaListener(topics = "${app.downstream.carrot-topic:carrot-topic}", groupId = "carrot-group")
     public void onMessage(String message, @Header(name = "env", required = false) String envHeader) {
         log.debug("Received carrot message with env header={} : {}", envHeader, message);
         if (envHeader != null && !envHeader.isEmpty() && !envHeader.equalsIgnoreCase(activeProfile)) {
