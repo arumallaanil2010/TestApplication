@@ -1,0 +1,11 @@
+spring:
+  profiles: local
+  kafka:
+    bootstrap-servers: localhost:9092
+
+app:
+  downstream:
+    beatroot-topic: "local-beatroot-topic"
+
+server:
+  port: 8081

@@ -1,0 +1,13 @@
+# Top-level local profile used for manual local testing (apps started with -Dspring.profiles.active=local)
+app:
+  kafka:
+    topics:
+      upstream: "local-upstream-topic"
+  downstream:
+    beatroot-topic: "local-beatroot-topic"
+    carrot-topic: "local-carrot-topic"
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+

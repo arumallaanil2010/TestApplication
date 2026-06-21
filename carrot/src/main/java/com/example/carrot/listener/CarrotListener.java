@@ -33,6 +33,7 @@ public class CarrotListener {
         }
 
         log.info("Carrot consumed message: {}", message);
+        System.out.println("[Carrot] consumed and processed message: " + message);
 
         if ("azure".equalsIgnoreCase(activeProfile)) {
             try {

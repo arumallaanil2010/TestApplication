@@ -34,6 +34,7 @@ public class BeatrootListener {
         }
 
         log.info("Beatroot consumed message: {}", message);
+        System.out.println("[Beatroot] consumed and processed message: " + message);
 
         // If running in Azure profile, process and persist to DB
         if ("azure".equalsIgnoreCase(activeProfile)) {

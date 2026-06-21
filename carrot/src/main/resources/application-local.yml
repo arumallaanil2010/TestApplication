@@ -1,0 +1,11 @@
+spring:
+  profiles: local
+  kafka:
+    bootstrap-servers: localhost:9092
+
+app:
+  downstream:
+    carrot-topic: "local-carrot-topic"
+
+server:
+  port: 8082
